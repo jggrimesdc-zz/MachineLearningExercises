@@ -1,0 +1,8 @@
+# autocorrelation plot of time series
+from matplotlib import pyplot
+from pandas import read_csv
+from statsmodels.graphics.tsaplots import plot_acf
+
+series = read_csv('daily-minimum-temperatures.csv', header=0, index_col=0, parse_dates=True, squeeze=True)
+plot_acf(series, lags=31)
+pyplot.show()
